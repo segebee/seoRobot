@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Automate</title>
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <input id="cellar" type="text" class="container" name="">
+    <div id="text">
+      Loading...
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/jquery.min.js"></script>
+  <script type="text/javascript">
+    $("#cellar").blur(function (e) {
+      var value = $(this).val()
+      var lower = value.toLowerCase()
+      var n = lower.replace(/ /g, "-");
+      var n = n.replace(/'/g, "");
+      $("#text").html(
+        `Shop for the best selection of ${value} at Cellar Central. We have the right ${value} at the right price for you.<br><br>
+        ${value} | Cellar Central <br><br>
+        ${n}<br><br>
+        ${lower},cheap ${lower},best ${lower},${lower} online,price of ${lower},get ${lower}
+        `
+      )
+    })
+  </script>
+</body>
+</html>
